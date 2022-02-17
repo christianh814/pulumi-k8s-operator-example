@@ -6,7 +6,7 @@
 
 You need
 
-* Pulumi Account
+* [Pulumi Account](https://www.pulumi.com/)
 * Pulumi Token
 * K8S Cluster
 
