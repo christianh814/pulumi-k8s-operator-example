@@ -36,11 +36,16 @@ Create a stack object in a YAML
 
 > Check out [the doc](https://github.com/pulumi/pulumi-kubernetes-operator/blob/master/docs/stacks.md) for `Stack` config options
 
+Things you'll need to change in the `Stack` object.
+
+* `.spec.stack` Set this based on your Pulumi account
+* `.spec.projectRepo` You should probably fork this repo to test this properly
+* `.spec.branch` If you have a different branch you want to target
+
 ```yaml
 apiVersion: v1
 kind: Secret
-metadata:
-  name: pulumi-api-secret
+metadata: name: pulumi-api-secret
 type: Opaque
 stringData:
   accessToken: "<PUT TOKEN HERE>"
