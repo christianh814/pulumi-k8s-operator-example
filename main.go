@@ -12,7 +12,7 @@ func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
 		isKind := config.GetBool(ctx, "isKind")
 		appName := "nginx"
-		appDeploymentReplicas := 2
+		appDeploymentReplicas := 3
 		appLabels := pulumi.StringMap{
 			"app": pulumi.String(appName),
 		}
