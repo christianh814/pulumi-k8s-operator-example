@@ -12,6 +12,7 @@ func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
 		isKind := config.GetBool(ctx, "isKind")
 		appName := "nginx"
+		appDeploymentReplicas := 2
 		appLabels := pulumi.StringMap{
 			"app": pulumi.String(appName),
 		}
@@ -20,7 +21,7 @@ func main() {
 				Selector: &metav1.LabelSelectorArgs{
 					MatchLabels: appLabels,
 				},
-				Replicas: pulumi.Int(1),
+				Replicas: pulumi.Int(appDeploymentReplicas),
 				Template: &corev1.PodTemplateSpecArgs{
 					Metadata: &metav1.ObjectMetaArgs{
 						Labels: appLabels,
@@ -64,6 +65,10 @@ func main() {
 				Selector: appLabels,
 			},
 		})
+
+		if err != nil {
+			return err
+		}
 
 		var ip pulumi.StringOutput
 
