@@ -16,6 +16,8 @@ For the K8S cluster...
 kind create cluster --image=kindest/node:v1.23.3
 ```
 
+Note that there is a [config in the `Pulumi.dev.yaml` file](./Pulumi.dev.yaml#L2) that is needed for OpenGitOps compliance.
+
 # Install Operator
 
 You need to install the Pulumi Operator. You can do it with Pulumi or via YAML from [their repo](https://github.com/pulumi/pulumi-kubernetes-operator)
