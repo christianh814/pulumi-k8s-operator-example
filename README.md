@@ -34,6 +34,8 @@ kubectl rollout status deploy/pulumi-kubernetes-operator
 
 Create a stack object in a YAML
 
+> Check out [the doc](https://github.com/pulumi/pulumi-kubernetes-operator/blob/master/docs/stacks.md) for `Stack` config options
+
 ```yaml
 apiVersion: v1
 kind: Secret
