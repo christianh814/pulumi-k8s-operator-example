@@ -45,7 +45,8 @@ Things you'll need to change in the `Stack` object.
 ```yaml
 apiVersion: v1
 kind: Secret
-metadata: name: pulumi-api-secret
+metadata:
+  name: pulumi-api-secret
 type: Opaque
 stringData:
   accessToken: "<PUT TOKEN HERE>"
